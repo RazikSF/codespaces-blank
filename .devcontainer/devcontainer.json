@@ -6,7 +6,7 @@
       "installTools": true
     }
   },
-  "postCreateCommand": "pip3 install pygame tkinter",
+  "postCreateCommand": "pip3 install pygame tkinter && bash .devcontainer/setup-vnc.sh",
   "forwardPorts": [6080],
   "portsAttributes": {
     "6080": {
