@@ -1,10 +1,25 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-"features": {
-    "desktop-lite": {
-        "password": "vscode",
-        "webPort": "6080",
-        "vncPort": "5901"
+  "name": "Python 3",
+  "image": "mcr.microsoft.com/devcontainers/python:3",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "installTools": true
     }
-}
+  },
+  "postCreateCommand": "pip3 install pygame tkinter",
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "VNC web client (noVNC)",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  }
 }
